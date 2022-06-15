@@ -1,4 +1,4 @@
-const accent = "#0012ff";
+const accent = "#197342";
 
 // placeholder colors
 const placeholder = "#969696";

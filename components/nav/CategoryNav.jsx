@@ -21,18 +21,18 @@ function CategoryNav() {
   }, [dispatch]);
 
   return (
-    <div className="px-custom py-5 bg-accent/10">
+    <div className="px-custom py-2 shadow-md">
       <button
         className="font-bold text-lg flex items-center gap-2 py-2 mb-2 px-3 rounded-md"
         onClick={() => setIsCategoryOpen(!isCategoryOpen)}
       >
-        <p>All Categories</p>
+        <p className="text-sm">All Categories</p>
         {isCategoryOpen ? <FiChevronUp /> : <FiChevronDown />}
       </button>
       <div
         className={`${
           isCategoryOpen ? "flex" : "hidden"
-        }  items-center gap-5 transition-all duration-1000`}
+        }  items-center text-xs gap-2 transition`}
       >
         {allCategoriesState.data?.map((category, i) => (
           <Link

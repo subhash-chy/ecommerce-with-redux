@@ -6,7 +6,7 @@ function ProductCard(props) {
   const { id, title, price, rating, imgUrl } = props;
   return (
     <Link href={`/products/${id}`} passHref>
-      <div className="border w-full h-full bg-white rounded-md cursor-pointer hover:scale-[1.01]">
+      <div className="border w-full h-full bg-white rounded-md cursor-pointer transition hover:scale-[1.01]">
         <div className="p-5">
           <div className="w-full h-60  relative">
             <Image src={imgUrl} alt={title} objectFit="contain" layout="fill" />

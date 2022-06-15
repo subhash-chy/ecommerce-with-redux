@@ -64,12 +64,6 @@ function Home() {
               imgUrl={product.image}
             />
           ))}
-          <Link href="/" passHref>
-            <div className="text-accent cursor-pointer py-5 border w-full h-full bg-white rounded-md flex items-center justify-center hover:scale-[1.01]">
-              <p>View All Products</p>
-              <FiChevronRight />
-            </div>
-          </Link>
         </div>
       </div>
     </>

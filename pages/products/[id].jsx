@@ -11,8 +11,10 @@ export async function getStaticPaths() {
   const res = await fetch("https://fakestoreapi.com/products");
   const data = await res.json();
 
+  const paths = data.map((d) => ({ params: { id: d.id.toString() } }));
+
   return {
-    paths: data.map((d) => ({ params: { id: d.id.toString() } })),
+    paths: paths,
     fallback: false,
   };
 }
@@ -29,6 +31,7 @@ export async function getStaticProps(context) {
 }
 
 function ProductDetails({ product }) {
+  console.log("Product => ", product);
   const dispatch = useDispatch();
   const byCategoryProducts = useSelector(
     (state) => state.getProductsByCategoryReducer
@@ -43,7 +46,7 @@ function ProductDetails({ product }) {
   return (
     <>
       {/* Product navigation */}
-      <div className="bg-accent/5 py-2 px-custom flex overflow-x-auto gap-5 items-center justify-cent">
+      <div className="shadow-md py-2 text-xs px-custom flex overflow-x-auto gap-2 items-center justify-cent">
         <p>Category</p>
         <FiChevronRight className="icon" />
         <p className="whitespace-nowrap">{product.category}</p>
@@ -94,17 +97,17 @@ function ProductDetails({ product }) {
 
             <div className="flex items-center gap-5">
               <p>Quantity</p>
-              <button className="bg-white py-2 px-3">-</button>
+              <button className="bg-gray-100 rounded-md py-2 px-3">-</button>
               <p>1</p>
-              <button className="bg-white py-2 px-3">+</button>
+              <button className="bg-gray-100 rounded-md py-2 px-3">+</button>
               <p>Only 3 in stock</p>
             </div>
 
             <div className="flex items-center gap-5">
-              <button className="bg-green-500 py-2 px-3 text-white">
+              <button className="bg-green-500 rounded-md uppercase p-3 hover:opacity-90 transition text-white">
                 Buy Now
               </button>
-              <button className="bg-orange-500 py-2 px-3 text-white">
+              <button className="bg-orange-500 rounded-md uppercase p-3 hover:opacity-90 transition text-white">
                 Add To Bag
               </button>
             </div>
@@ -133,7 +136,7 @@ function ProductDetails({ product }) {
             <div className="grid md:grid-cols-2 gap-5">
               <div>
                 <p>Brand</p>
-                <p className="text-lg font-semibold">Sony</p>
+                <p className="text-lg font-semibold">{product.category}</p>
               </div>
               <div>
                 <p>SKU</p>
@@ -144,9 +147,7 @@ function ProductDetails({ product }) {
             </div>
             <div>
               <p>What is in the box</p>
-              <p className="text-lg font-semibold">
-                1x Image Watch , 1x Warranty Card
-              </p>
+              <p className="text-lg font-semibold">{product.category}</p>
             </div>
           </div>
         </div>
