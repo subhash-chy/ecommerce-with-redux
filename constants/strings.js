@@ -1,1 +1,1 @@
-export const logo = "REDUX SHOP";
+export const logo = "R. Store";

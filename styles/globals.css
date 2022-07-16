@@ -11,7 +11,7 @@ body {
 }
 
 .icon {
-  @apply w-7 h-7;
+  @apply w-6 h-6;
 }
 
 .placeholder {

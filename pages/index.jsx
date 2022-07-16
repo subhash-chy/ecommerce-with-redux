@@ -31,7 +31,7 @@ function Home() {
     <>
       <CategoryNav />
       {/* Carousel featured products */}
-      {/* <div className="relative">
+      <div className="relative">
         <FiChevronLeft className="ml-3 md:ml-10 h-full w-10 text-white cursor-pointer absolute z-10 " />
         <FiChevronRight className="mr-3 md:mr-10 h-full w-10 text-white cursor-pointer absolute z-10  right-0" />
         <div className="h-[60vh] flex gap-5 overflow-x-auto mb-20 carousel relative snap-x">
@@ -49,7 +49,7 @@ function Home() {
             </div>
           ))}
         </div>
-      </div> */}
+      </div>
 
       <div className="px-custom mb-20 mt-10 bg-[#f0f0f0] ">
         <h1 className="mb-5 text-2xl font-bold">Newest Products</h1>
